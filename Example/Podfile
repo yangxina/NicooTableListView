@@ -1,0 +1,12 @@
+source 'git@192.168.28.216:zhangyao/TZSpecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'NicooTableListViewController_Example' do
+  pod 'NicooTableListViewController', :path => '../'
+
+  target 'NicooTableListViewController_Tests' do
+    inherit! :search_paths
+    
+  end
+end

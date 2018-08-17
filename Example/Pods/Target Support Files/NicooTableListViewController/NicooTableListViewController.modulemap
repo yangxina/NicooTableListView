@@ -1,0 +1,6 @@
+framework module NicooTableListViewController {
+  umbrella header "NicooTableListViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

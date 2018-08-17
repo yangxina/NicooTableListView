@@ -1,0 +1,35 @@
+{
+  "name": "NicooTableListViewController",
+  "version": "0.1.0",
+  "summary": "edit + headeRefresh,footerRefresh  tableList",
+  "description": "table list baseVC, delegate for edit , andRefresh, noDataViewShow.",
+  "homepage": "https://github.com/504672006@qq.com/NicooTableListViewController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "504672006@qq.com": "yangxin@tzpt.com"
+  },
+  "source": {
+    "git": "https://github.com/504672006@qq.com/NicooTableListViewController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "NicooTableListViewController/Classes/**/*",
+  "resource_bundles": {
+    "NicooTableListViewController": [
+      "NicooTableListViewController/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "MJRefresh": [
+      "~> 3.1.0"
+    ],
+    "SnapKit": [
+      "~> 4.0"
+    ]
+  }
+}
