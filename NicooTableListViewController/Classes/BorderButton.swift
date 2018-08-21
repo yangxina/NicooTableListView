@@ -22,7 +22,7 @@ open class BorderButton: UIButton {
             setNeedsDisplay()
         }
     }
-    public var borderWidth: CGFloat = 1.0 {
+    public var borderWidth: CGFloat = 0.4 {
         didSet {
             setNeedsDisplay()
         }

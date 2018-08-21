@@ -130,7 +130,7 @@ open class MutableButtonsView: UIView {
         }
         for title in titles {
             let button = BorderButton()
-            button.borderColor = UIColor(white: 0.1, alpha: 0.8)
+            button.borderColor = UIColor(white: 0, alpha: 0.5)
             button.corners = [UIRectCorner.topLeft]
             button.setTitle(title, for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 16)

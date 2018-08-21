@@ -64,8 +64,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "自定义列表代理方法"
-        navigationItem.rightBarButtonItem = editBarButton
-        view.addSubview(buttonsView)
+        navigationItem.rightBarButtonItem = editBarButton    // 编辑按钮
+        view.addSubview(buttonsView)       // 底部删除，全选栏
         addChildViewController(baseListVC)
         view.addSubview(baseListVC.view)
         layoutPageSubviews()
