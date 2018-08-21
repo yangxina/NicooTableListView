@@ -1,19 +1,19 @@
 {
   "name": "NicooTableListViewController",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "summary": "edit + headeRefresh,footerRefresh  tableList",
   "description": "table list baseVC, delegate for edit , andRefresh, noDataViewShow.",
-  "homepage": "https://github.com/504672006@qq.com/NicooTableListViewController",
+  "homepage": "https://github.com/yangxina/NicooTableListView.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "504672006@qq.com": "yangxin@tzpt.com"
+    "yangxina": "504672006@qq.com"
   },
   "source": {
-    "git": "https://github.com/504672006@qq.com/NicooTableListViewController.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/yangxina/NicooTableListView.git",
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "8.0"

@@ -1,6 +1,6 @@
 PODS:
   - MJRefresh (3.1.15.3)
-  - NicooTableListViewController (0.1.0):
+  - NicooTableListViewController (0.1.4):
     - MJRefresh (~> 3.1.0)
     - SnapKit (~> 4.0)
   - SnapKit (4.0.0)
@@ -19,9 +19,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  NicooTableListViewController: 6e4d154a164f8c0d9df21d4e5e8d0d85c875d77b
+  NicooTableListViewController: c98eb86d7575e35fc81046ee11b9f492bce1809a
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: f0e27870e23c2f7bbb9512e33d2fddee67c88df3
+PODFILE CHECKSUM: 903666e9d9c61176a50ebdb7cbc972d64b16b305
 
 COCOAPODS: 1.5.0
