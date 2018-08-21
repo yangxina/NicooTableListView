@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NicooTableListViewController'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'edit + headeRefresh,footerRefresh  tableList'
 
 # This description is used to generate tags and improve search results.
