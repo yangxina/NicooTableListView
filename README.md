@@ -16,75 +16,91 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 Demo中组要的实现原理是： 1.在一个带tableView的VC中，将tableView的代理都再代理一层出去，外部实现自定义的代理来实现页面复用。包括头部，尾部刷新，请求失败，点击页面重新请求等操作，都是通过代理实现，需要编辑，删除，全选单选的地方，也只需要实现代理就能包含该工能。
 
 #使用： 
-1.  懒加载基类VC，在ViewDidLoad() 中添加到自己的VC上。
-private lazy var baseListVC: NicooTableListViewController = {
-let vc = NicooTableListViewController()
-vc.delegate = self
-return vc
-}()
+1.  懒加载基类VC，在ViewDidLoad() 中添加到自己的VC上。  
 
-
-view.addSubview(baseListVC.view)
-layoutPageSubviews()
+    private lazy var baseListVC: NicooTableListViewController = {
+        let vc = NicooTableListViewController()
+       vc.delegate = self
+        return vc
+    }()
+    view.addSubview(baseListVC.view)
+    layoutPageSubviews()
 
 2.  选择性实现以下代理方法： 
 
 (1) /// 是否有头部刷新控件, 
-func haveHeaderRefreshView() -> Bool
+
+    func haveHeaderRefreshView() -> Bool
 
 (2)  /// 是否有底部刷新控件
-func haveFooterRefreshView() -> Bool
+
+    func haveFooterRefreshView() -> Bool
 
 
 (3) /// tableView头部刷新
-func headerRefreshing(_ tableView: UITableView)
+
+    func headerRefreshing(_ tableView: UITableView)
 
 (4) /// tableView加载更多页数据
-func loadMoreData(_ tableView: UITableView)
+
+    func loadMoreData(_ tableView: UITableView)
 
 -----------------------------------------------------《《 以上4个是实现分页的列表代理 》》
 
 
 (5) /// 数据请求失败后重新请求数据调用
-func requestDataAgain()
+
+    func requestDataAgain()
 
 -----------------------------------------------------《《 请求失败后，点击失败页面再次请求的代理 》》
 
 (6) /// 自定义rowCount（必须实现的方法）
-func listTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+
+    func listTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 
 (7) /// 自定义cell类
-func cellClass(for listBaseViewController: NicooTableListViewController) -> AnyClass?
+
+    func cellClass(for listBaseViewController: NicooTableListViewController) -> AnyClass?
 
 (8) /// 自定义cell高度
-func cellHeight(for listBaseViewController: NicooTableListViewController) -> CGFloat?
+
+    func cellHeight(for listBaseViewController: NicooTableListViewController) -> CGFloat?
 
 (9) /// 自定义cell
-func listTableView(_ listBaseViewController: NicooTableListViewController, tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell?
+
+    func listTableView(_ listBaseViewController: NicooTableListViewController, tableView: UITableView, cellForRowAt         indexPath: IndexPath) -> UITableViewCell?
 
 (10) /// 自定义的cell的配置方法，操作Model，数据等
-func configCell(_ tableView: UITableView, for cell: UITableViewCell, cellForRowAt indexPath: IndexPath)
+
+    func configCell(_ tableView: UITableView, for cell: UITableViewCell, cellForRowAt indexPath: IndexPath)
 
 (11) /// 自定义点击事件
-func listTableView(_ tableView: UITableView, didSelectedAtIndexPath indexPath: IndexPath)
+
+    func listTableView(_ tableView: UITableView, didSelectedAtIndexPath indexPath: IndexPath)
 
 (12) /// 自定义反选代理事件
-func listTableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
+
+    func listTableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
 
 (13) /// 自定义编辑状态下的点击事件
-func editingListTableView(_ tableView: UITableView, didSelectedAtIndexPath indexPath: IndexPath, didSelected indexPaths: [IndexPath]?)
+
+    func editingListTableView(_ tableView: UITableView, didSelectedAtIndexPath indexPath: IndexPath, didSelected indexPaths: [IndexPath]?)
 
 (14) /// 自定义编辑状态下反选代理事件
-func editingListTableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath, didSelected indexPaths: [IndexPath]?)
+
+    func editingListTableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath, didSelected indexPaths: [IndexPath]?)
 
 (15) ///  全选之后的回调
-func editingListTableView(_ tableView: UITableView, allSelectedRowAt indexPaths: [IndexPath]?)
+
+    func editingListTableView(_ tableView: UITableView, allSelectedRowAt indexPaths: [IndexPath]?)
 
 (16) /// 自定义编辑状态下选中图标颜色
-func editingSelectedViewColor() -> UIColor
+
+    func editingSelectedViewColor() -> UIColor
 
 (17) /// 列表根据需要显示统计
-func shouldShowStatics(_ listBaseViewController: NicooTableListViewController) -> Bool
+
+    func shouldShowStatics(_ listBaseViewController: NicooTableListViewController) -> Bool
 
 -----------------------------------------------------《《 tableView 的代理，其中 （13）. （14）. （15） 是在做编辑全选的时候的回调代理 ，（16）是编辑选中的按钮的自定义颜色 ， (17) 是tableView列表的数据条数统计 》》  
 
