@@ -16,15 +16,15 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 Demo中组要的实现原理是： 1.在一个带tableView的VC中，将tableView的代理都再代理一层出去，外部实现自定义的代理来实现页面复用。包括头部，尾部刷新，请求失败，点击页面重新请求等操作，都是通过代理实现，需要编辑，删除，全选单选的地方，也只需要实现代理就能包含该工能。
 
 #使用： 
-1.  懒加载基类VC，在ViewDidLoad() 中添加到自己的VC上。  
+1.  懒加载基类VC，在ViewDidLoad() 中添加到自己的VC 
 
-    private lazy var baseListVC: NicooTableListViewController = {
-        let vc = NicooTableListViewController()
-       vc.delegate = self
-        return vc
-    }()
-    view.addSubview(baseListVC.view)
-    layoutPageSubviews()
+        private lazy var baseListVC: NicooTableListViewController = {
+             let vc = NicooTableListViewController()
+             vc.delegate = self
+             return vc
+        }()
+        view.addSubview(baseListVC.view)
+        layoutPageSubviews()    
 
 2.  选择性实现以下代理方法： 
 
