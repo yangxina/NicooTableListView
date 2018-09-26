@@ -26,9 +26,16 @@ open class NicooTableListViewController: UIViewController {
             tableView.setEditing(tableEditing, animated: true)
             tableView.tintColor = delegate?.editingSelectedViewColor()
         
-            let footerView = tableView.mj_footer   // 记录之前是否有下拉刷新的UI
-            tableView.mj_header = tableEditing ? nil : refreshHeaderView
-            tableView.mj_footer = tableEditing ? nil : footerView
+            if tableEditing {
+                tableView.mj_header = nil
+                tableView.mj_footer = nil
+            } else {
+                if delegate != nil {
+                    // 记录之前是否有下拉刷新的UI
+                    tableView.mj_header = delegate!.haveHeaderRefreshView() ? refreshHeaderView : nil
+                    tableView.mj_footer = delegate!.haveFooterRefreshView() ? refreshFooterView : nil
+                }
+            }
         }
     }
     public lazy var tableView: UITableView = {
